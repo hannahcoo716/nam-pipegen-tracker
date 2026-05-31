@@ -336,7 +336,7 @@ const MONTHS   = [{"key":"2026-01","short":"Jan","label":"January 2026"},{"key":
 const CURRENT_MONTH = '2026-05';
 const MONTH_SHORT   = Object.fromEntries(MONTHS.map(m => [m.key, m.short]));
 const MAX_WK        = {"2026-01":5,"2026-02":4,"2026-03":4,"2026-04":4,"2026-05":4};
-const QUARTERS      = [{"key":"Q1-2026","label":"Q1 2026","months":["2026-01","2026-02","2026-03"]},{"key":"Q2-2026","label":"Q2 2026","months":["2026-04","2026-05"]}];
+const QUARTERS      = [{"key":"Q12026","label":"Q1 2026","months":["2026-01","2026-02","2026-03"]},{"key":"Q22026","label":"Q2 2026","months":["2026-04","2026-05"]}];
 const SEG_TARGETS   = {"Lindsay Browning":{"2026-01":{"Enterprise":5618056},"2026-02":{"Enterprise":5382754},"2026-03":{"Enterprise":6991232},"2026-04":{"Enterprise":5239460},"2026-05":{"Enterprise":5357517}},"James Boreham":{"2026-01":{"Mid-Market":5565273},"2026-02":{"Mid-Market":6025056},"2026-03":{"Mid-Market":6827724},"2026-04":{"Mid-Market":6607508},"2026-05":{"Mid-Market":6558627}},"Yoav Shetrit":{"2026-01":{"SMB & Growth":2786123},"2026-02":{"SMB & Growth":3137984},"2026-03":{"SMB & Growth":3468473},"2026-04":{"SMB & Growth":3810973},"2026-05":{"SMB & Growth":4079751}}};
 
 
@@ -735,7 +735,7 @@ function init() {
   renderMonthTabs();
   renderSummary();
   renderTable();
-  document.getElementById('lastUpdated').textContent = 'Live data · Last refreshed: May 29, 2026';
+  document.getElementById('lastUpdated').textContent = 'Live data · Last refreshed: May 30, 2026';
 }
 
 init();
