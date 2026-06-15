@@ -307,7 +307,6 @@ tr:hover td { background: #eef4ff !important; }
         <th>Name</th>
         <th title="Monthly ARR quota">Quota</th>
         <th title="Segment-level quota target">Seg Target</th>
-        <th title="EP win rate (entry pipeline, Jan–May 2026)">EP Win Rate</th>
         <th class="th-group-sep" title="Monthly pipegen target (EP-based model: entry pipeline coverage + steady state)">Pipegen Target</th>
         <th title="BnB pipeline target (build-and-book: create &amp; close same month)">BnB Target</th>
         <th title="Weekly pipegen target = Monthly ÷ 4">Wk Target</th>
@@ -543,7 +542,6 @@ function metricsCell(s, showWR, rvpName, isRvp) {
   return `
     <td>${fmt(s.quota)}</td>
     ${segTargetCell(rvpName, isRvp)}
-    <td>${showWR ? fmtPct(s.ep_win_rate) : '<span style="color:#c5d9ff">—</span>'}</td>
     <td class="td-group-sep">${fmt(s.pg_target)}</td>
     <td>${fmt(s.wk_pg_target)}</td>
     <td class="td-group-sep">${fmt(s.actual)}</td>
@@ -578,7 +576,6 @@ function renderHeader() {
     <th>Name</th>
     <th title="ARR quota">${activeView.type === 'quarter' ? 'Qtly Quota' : 'Quota'}</th>
     <th title="Segment-level quota">Seg Target</th>
-    <th title="12-month trailing win rate">Win Rate</th>
     <th class="th-group-sep" title="Pipegen target">Pipegen Target</th>
     <th title="Weekly pipegen target">Wk Target</th>
     <th class="th-group-sep" title="Actual pipegen">Actual Pipegen</th>
@@ -721,11 +718,6 @@ function renderSummary() {
       <div class="summary-label">Attainment</div>
       <div class="summary-value" style="color:${color}">${fmtPct(att)}</div>
       <div class="summary-sub">vs pipegen target</div>
-    </div>
-    <div class="summary-item">
-      <div class="summary-label">Avg Win Rate</div>
-      <div class="summary-value" style="font-size:18px;">${fmtPct(total.win_rate)}</div>
-      <div class="summary-sub">Quota-weighted</div>
     </div>
   `;
 }
